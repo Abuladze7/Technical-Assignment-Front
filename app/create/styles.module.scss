@@ -1,0 +1,7 @@
+.select {
+  div {
+    &:global(.ant-select-selector) {
+      background: #f4f3ff !important;
+    }
+  }
+}
