@@ -48,7 +48,7 @@ export default function Home() {
         {blogsLoading ? (
           <p className="mx-auto">loading...</p>
         ) : (
-          blogsData.map((e, i) => <BlogCard {...e} key={e._id} />)
+          blogsData.map((e) => <BlogCard {...e} key={e._id} />)
         )}
       </div>
     </div>

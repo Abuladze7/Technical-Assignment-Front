@@ -22,7 +22,9 @@ const LoginModel = ({ setIsLogin }: any) => {
         `${process.env.NEXT_PUBLIC_API}/user/login`,
         value
       );
-      Cookies.set("_userInfo", res.data, { expires: 7 });
+      localStorage.setItem("_userInfo", res.data);
+      Cookies.set("_userToken", res.data.token, { expires: 7 });
+
       setTimeout(() => {
         location.reload();
       }, 1000);

@@ -20,9 +20,12 @@ const Navbar = () => {
       <RegisterDialog open={open} onClose={() => setOpen(false)} />
       <header className="w-full flex justify-center items-center bg-white px-6">
         <nav className="max-w-[1288px] w-full flex items-center justify-between">
-          <h1 className="text-4xl text-red-500 font-bold uppercase py-7">
+          <Link
+            href={"/"}
+            className="text-4xl text-red-500 font-bold uppercase py-7"
+          >
             Research
-          </h1>
+          </Link>
           <div className="max-w-[356px] w-full">
             <form className="w-full">
               <input
@@ -34,7 +37,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-2">
             {!userLoading ? (
-              Cookies.get("_userInfo") ? (
+              Cookies.get("_userToken") ? (
                 <>
                   <Link
                     href={"/profile"}

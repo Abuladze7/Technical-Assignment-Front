@@ -5,17 +5,18 @@ import { redirect } from "next/navigation";
 
 const page = () => {
   const handleLogOut = () => {
-    Cookies.remove("_userInfo");
+    Cookies.remove("_userToken");
+    localStorage.removeItem("_userInfo");
     setTimeout(() => {
       location.reload();
     }, 2000);
   };
 
   useEffect(() => {
-    if (!Cookies.get("_userInfo")) {
+    if (!Cookies.get("_userToken")) {
       redirect("/");
     }
-  }, [Cookies.get("_userInfo")]);
+  }, [Cookies.get("_userToken")]);
 
   return (
     <div>

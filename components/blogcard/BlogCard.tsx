@@ -41,6 +41,9 @@ const BlogCard = ({
             </div>
           ))}
         </div>
+        <p className="text-base leading-7 font-normal text-[#404049]">
+          {description}
+        </p>
       </div>
     </div>
   );
